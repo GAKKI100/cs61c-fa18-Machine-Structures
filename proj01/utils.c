@@ -228,6 +228,7 @@ void save_image_with_depth(char *filename, const unsigned char *data,
         }
     }
     _save_image(filename, data_24bit, width, height, 24);
+	free(data_24bit);
 }
 
 void allocation_failed() {
