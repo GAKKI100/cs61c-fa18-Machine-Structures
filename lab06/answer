@@ -1,0 +1,54 @@
+One:
+what combination of parameters is producing the hit rate you observe? (Hint: Your answer should be of the form: "Because [parameter A] in bytes is exactly equal to [parameter B] in bytes.")
+
+step size = block size
+
+What is our hit rate if we increase Rep Count arbitrarily? Why?
+
+wouldn't change since the whole cache is being skipped
+
+How could we modify one program parameter to increase our hit rate? (Hint: Your answer should be of the form: "Change [parameter] to [value]." Note: we don't care if we access the same array elements. Just give us a program parameter modification that would increase the hit rate.
+
+decrease step size
+
+
+Two:
+How many memory accesses are there per iteration of the inner loop? (not the one involving repcount). It's not 1.
+
+2
+
+What is the repeating hit/miss pattern? WHY? (Hint: it repeats every 4 accesses).
+
+It misses first then hits 3 times since.
+
+
+This should follow very straightforwardly from the above question: Explain the hit rate in terms of the hit/miss pattern.
+
+
+Keeping everything else the same, what happens to our hit rate as Rep Count goes to infinity? Why?
+t combination of parameters is producing the hit rate you observe? (Hint: Your answer should be of the form: "Because [parameter A] in bytes is exactly equal to [parameter B] in bytes.")
+
+step size = block size
+
+What is our hit rate if we increase Rep Count arbitrarily? Why?
+
+wouldn't change since the whole cache is being skipped
+
+How could we modify one program parameter to increase our hit rate? (Hint: Your answer should be of the form: "Change [parameter] to [value]." Note: we don't care if we access the same array elements. Just give us a program parameter modification that would increase the hit rate.
+
+decrease step size
+
+How many memory accesses are there per iteration of the inner loop? (not the one involving repcount). It's not 1.
+
+2
+
+What is the repeating hit/miss pattern? WHY? (Hint: it repeats every 4 accesses).
+
+It misses first then hits 3 times since.
+
+
+This should follow very straightforwardly from the above question: Explain the hit rate in terms of the hit/miss pattern.
+
+
+Keeping everything else the same, what happens to our hit rate as Rep Count goes to infinity? Why?
+
