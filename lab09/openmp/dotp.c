@@ -27,26 +27,29 @@ double dotp_naive(double* x, double* y) {
 
 // EDIT THIS FUNCTION PART 1
 double dotp_manual_optimized(double* x, double* y) {
-     double global_sum = 0.0;
-	#pragma omp parallel
+	double global_sum = 0.0;
+#pragma omp parallel
 	{
-		#pragma omp for
-		for(int i=0; i<ARRAY_SIZE; i++)
-			#pragma omp critical
-				global_sum += x[i] * y[i];
+		double local_sum = 0;
+#pragma omp for
+		for (int i = 0; i < ARRAY_SIZE; i++) {
+			 local_sum += x[i] * y[i];
+		}
+#pragma omp critical
+		global_sum += local_sum;
 	}
 	return global_sum;
 }
 
 // EDIT THIS FUNCTION PART 2
 double dotp_reduction_optimized(double* x, double* y) {
-     double global_sum = 0.0;
-	#pragma omp parallel
+	double global_sum = 0.0;
+#pragma omp parallel
 	{
-		#pragma omp for
-		for(int i=0; i<ARRAY_SIZE; i++)
-			#pragma omp critical
-				global_sum += x[i] * y[i];
+#pragma omp for reduction(+:global_sum)
+		for (int i = 0; i < ARRAY_SIZE; i++) {
+			global_sum += x[i] * y[i];
+		}	
 	}
 	return global_sum;
 }
