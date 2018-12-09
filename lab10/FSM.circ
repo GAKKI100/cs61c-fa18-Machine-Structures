@@ -98,14 +98,18 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(330,190)" to="(350,190)"/>
     <wire from="(430,190)" to="(450,190)"/>
     <wire from="(340,240)" to="(340,280)"/>
+    <wire from="(450,210)" to="(570,210)"/>
+    <wire from="(330,210)" to="(330,220)"/>
     <wire from="(330,220)" to="(470,220)"/>
+    <wire from="(330,190)" to="(330,210)"/>
+    <wire from="(450,190)" to="(450,210)"/>
     <wire from="(340,170)" to="(350,170)"/>
     <wire from="(370,320)" to="(380,320)"/>
-    <wire from="(450,190)" to="(450,240)"/>
+    <wire from="(250,210)" to="(330,210)"/>
     <wire from="(340,240)" to="(450,240)"/>
+    <wire from="(450,210)" to="(450,240)"/>
     <wire from="(370,320)" to="(370,350)"/>
     <wire from="(470,220)" to="(470,280)"/>
-    <wire from="(330,190)" to="(330,220)"/>
     <wire from="(340,280)" to="(380,280)"/>
     <comp lib="0" loc="(340,170)" name="Pin">
       <a name="label" val="FSM_Input"/>
@@ -121,6 +125,17 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(490,170)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(250,210)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(570,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="2"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
   <circuit name="FSMLogic">
@@ -290,18 +305,32 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <circ-port height="10" pin="610,230" width="10" x="125" y="65"/>
       <circ-anchor facing="east" height="6" width="6" x="127" y="67"/>
     </appear>
-    <wire from="(250,210)" to="(260,210)"/>
-    <wire from="(250,250)" to="(260,250)"/>
-    <wire from="(250,290)" to="(260,290)"/>
+    <wire from="(300,220)" to="(360,220)"/>
+    <wire from="(250,200)" to="(440,200)"/>
     <wire from="(250,200)" to="(250,210)"/>
     <wire from="(250,240)" to="(250,250)"/>
     <wire from="(250,280)" to="(250,290)"/>
-    <wire from="(250,200)" to="(290,200)"/>
-    <wire from="(250,240)" to="(290,240)"/>
-    <wire from="(250,280)" to="(290,280)"/>
+    <wire from="(420,270)" to="(420,280)"/>
+    <wire from="(440,200)" to="(440,210)"/>
+    <wire from="(250,280)" to="(300,280)"/>
+    <wire from="(330,240)" to="(330,270)"/>
+    <wire from="(420,270)" to="(460,270)"/>
+    <wire from="(440,210)" to="(530,210)"/>
+    <wire from="(390,280)" to="(420,280)"/>
+    <wire from="(330,270)" to="(360,270)"/>
+    <wire from="(330,240)" to="(360,240)"/>
+    <wire from="(580,230)" to="(610,230)"/>
+    <wire from="(510,250)" to="(530,250)"/>
     <wire from="(230,200)" to="(250,200)"/>
     <wire from="(230,240)" to="(250,240)"/>
     <wire from="(230,280)" to="(250,280)"/>
+    <wire from="(250,240)" to="(330,240)"/>
+    <wire from="(250,210)" to="(260,210)"/>
+    <wire from="(250,250)" to="(260,250)"/>
+    <wire from="(250,290)" to="(260,290)"/>
+    <wire from="(300,220)" to="(300,280)"/>
+    <wire from="(390,230)" to="(460,230)"/>
+    <wire from="(290,290)" to="(360,290)"/>
     <comp lib="0" loc="(610,230)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -310,9 +339,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     </comp>
     <comp lib="0" loc="(230,200)" name="Pin">
       <a name="label" val="Input"/>
-    </comp>
-    <comp lib="6" loc="(414,131)" name="Text">
-      <a name="text" val="PUT CIRCUITRY HERE"/>
     </comp>
     <comp lib="0" loc="(230,240)" name="Pin">
       <a name="label" val="State_Bit_0"/>
@@ -323,6 +349,17 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="label" val="State_Bit_1"/>
     </comp>
     <comp lib="1" loc="(290,250)" name="NOT Gate"/>
+    <comp lib="6" loc="(414,130)" name="Text">
+      <a name="text" val="PUT CIRCUITRY HERE"/>
+    </comp>
+    <comp lib="1" loc="(390,230)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(390,280)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(510,250)" name="OR Gate"/>
+    <comp lib="1" loc="(580,230)" name="OR Gate"/>
   </circuit>
   <circuit name="StateBitZero">
     <a name="circuit" val="StateBitZero"/>
@@ -339,18 +376,24 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <circ-port height="10" pin="610,230" width="10" x="125" y="65"/>
       <circ-anchor facing="east" height="6" width="6" x="127" y="67"/>
     </appear>
-    <wire from="(250,210)" to="(260,210)"/>
-    <wire from="(250,250)" to="(260,250)"/>
-    <wire from="(250,290)" to="(260,290)"/>
+    <wire from="(290,210)" to="(470,210)"/>
     <wire from="(250,200)" to="(250,210)"/>
     <wire from="(250,240)" to="(250,250)"/>
     <wire from="(250,280)" to="(250,290)"/>
-    <wire from="(250,240)" to="(290,240)"/>
-    <wire from="(250,280)" to="(290,280)"/>
-    <wire from="(250,200)" to="(290,200)"/>
+    <wire from="(250,280)" to="(400,280)"/>
+    <wire from="(520,230)" to="(610,230)"/>
     <wire from="(230,200)" to="(250,200)"/>
     <wire from="(230,240)" to="(250,240)"/>
     <wire from="(230,280)" to="(250,280)"/>
+    <wire from="(430,250)" to="(430,270)"/>
+    <wire from="(250,200)" to="(330,200)"/>
+    <wire from="(250,210)" to="(260,210)"/>
+    <wire from="(250,250)" to="(260,250)"/>
+    <wire from="(250,290)" to="(260,290)"/>
+    <wire from="(330,200)" to="(330,260)"/>
+    <wire from="(250,240)" to="(290,240)"/>
+    <wire from="(430,250)" to="(470,250)"/>
+    <wire from="(330,260)" to="(400,260)"/>
     <comp lib="6" loc="(414,131)" name="Text">
       <a name="text" val="PUT CIRCUITRY HERE"/>
     </comp>
@@ -372,5 +415,9 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(230,200)" name="Pin">
       <a name="label" val="Input"/>
     </comp>
+    <comp lib="1" loc="(430,270)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(520,230)" name="OR Gate"/>
   </circuit>
 </project>
