@@ -1,7 +1,7 @@
 BINARIES = benchmark check depth_map
 CC = gcc
-CFLAGS = -O3 -DNDEBUG -g0 -std=c99 -Wall -march=haswell -msse2 -fopenmp -pthread
-LFLAGS = -lm -lpthread
+CFLAGS = -O3 -DNDEBUG -g0 -std=c99 -Wall -march=haswell -msse2
+LFLAGS = -lm
 OMP_NESTED = TRUE
 
 default: clean check benchmark

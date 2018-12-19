@@ -63,14 +63,18 @@ void calc_depth(unsigned char *depth_map, unsigned char *left,
 			if(right_lr_y + feature_height >= image_height){
                                 right_lr_y = image_height - 1 - feature_height;
                         }				
-			//the coordiates of the centers of the UpperLeft and LowerRight feature
-			int sed_len = (right_lr_x - right_ul_x + 1) * (right_lr_y - right_ul_y + 1); 	
+			//the UpperLeft and LowerRight coordiates of the scope for all possible features' center
+
+			int sed_len = (right_lr_x - right_ul_x + 1) * (right_lr_y - right_ul_y + 1);
+			//short for Squared Euclidean Distance 	
 			unsigned sed[sed_len];
 			for(int t = 0; t < sed_len; t++){
 				sed[t] = ~0;
 			}
 			unsigned int temp;
 			int count = 0;
+
+/*calculate SEDs of all matching features in right image*/
 			for(int x = right_ul_x; x <= right_lr_x; x++){
 				for(int y = right_ul_y; y <= right_lr_y; y++){
 					temp = 0;
@@ -83,6 +87,8 @@ void calc_depth(unsigned char *depth_map, unsigned char *left,
 					count++;
 				}
 			}
+
+/*find the minimum sed*/
                         unsigned int min = sed[0];
 			int dx = abs(right_ul_x - i);
 			int dy = abs(right_ul_y - j);
@@ -95,7 +101,8 @@ void calc_depth(unsigned char *depth_map, unsigned char *left,
 					depth = normalized_displacement(dx, dy, maximum_displacement);
     				}
 			}
-
+/*find the feature with minimum SED; 
+and if two feature with the same SED,choose the nearest one */
 			for(int z = 0; z < sed_len; z++){
 				if(sed[z] == min){
 					int temp_right_x = right_ul_x +  z / (right_lr_y - right_ul_y + 1);
